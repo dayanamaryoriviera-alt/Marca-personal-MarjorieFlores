@@ -1,0 +1,644 @@
+```html
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marjorie Flores | Marca Personal</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Tailwind Color Scheme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandBlue: '#0055FF',      /* Azul Eléctrico */
+            brandBlueDark: '#003CBD',  /* Azul Eléctrico Oscuro */
+            brandYellow: '#FFDE00',    /* Amarillo */
+            brandYellowHover: '#E5C700'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #curriculum-section, #curriculum-section * {
+        visibility: visible;
+      }
+      #curriculum-section {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+
+  <!-- ================= NAV BAR ================= -->
+  <nav class="sticky top-0 z-50 bg-white shadow-md border-b-4 border-brandBlue">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <!-- Logo / Nombre -->
+        <a href="#" class="flex items-center gap-2 text-2xl font-black tracking-wider text-gray-900">
+          <span class="bg-brandBlue text-white px-3 py-1 rounded-md text-xl">MF</span>
+          <span>MARJORIE <span class="text-brandBlue">FLORES</span></span>
+        </a>
+
+        <!-- Enlaces Escritorio -->
+        <div class="hidden md:flex space-x-6 font-semibold text-gray-700">
+          <a href="#sobre-mi" class="hover:text-brandBlue transition">Sobre Mí</a>
+          <a href="#mision-vision" class="hover:text-brandBlue transition">Misión y Visión</a>
+          <a href="#diplomados" class="hover:text-brandBlue transition">Diplomados</a>
+          <a href="#voluntariados" class="hover:text-brandBlue transition">Voluntariado</a>
+          <a href="#portafolio" class="hover:text-brandBlue transition">Portafolio</a>
+          <a href="#curriculum" class="hover:text-brandBlue transition">Curriculum</a>
+        </div>
+
+        <!-- Botón Menú Móvil -->
+        <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-700 focus:outline-none p-2 rounded-lg hover:bg-gray-100">
+          <i class="fa-solid font-bold fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 px-4 pt-2 pb-4 space-y-2">
+      <a href="#sobre-mi" class="block py-2 text-gray-700 hover:text-brandBlue font-medium">Sobre Mí</a>
+      <a href="#mision-vision" class="block py-2 text-gray-700 hover:text-brandBlue font-medium">Misión y Visión</a>
+      <a href="#diplomados" class="block py-2 text-gray-700 hover:text-brandBlue font-medium">Diplomados</a>
+      <a href="#voluntariados" class="block py-2 text-gray-700 hover:text-brandBlue font-medium">Voluntariado</a>
+      <a href="#portafolio" class="block py-2 text-gray-700 hover:text-brandBlue font-medium">Portafolio</a>
+      <a href="#curriculum" class="block py-2 text-gray-700 hover:text-brandBlue font-medium">Curriculum</a>
+    </div>
+  </nav>
+
+  <!-- ================= HERO / SOBRE MÍ ================= -->
+  <section id="sobre-mi" class="py-16 bg-white border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+        
+        <!-- Foto de Perfil -->
+        <div class="md:col-span-5 flex justify-center">
+          <div class="relative group">
+            <div class="absolute -inset-2 bg-gradient-to-r from-brandBlue to-brandYellow rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+            <div class="relative w-72 h-80 sm:w-80 sm:h-96 bg-gray-100 rounded-2xl overflow-hidden border-4 border-white shadow-xl flex items-center justify-center">
+              
+              <!-- Direct Google Drive URL with SVG Fallback -->
+              <img 
+                src="https://lh3.googleusercontent.com/d/1JrLfzskZNN4aYLzWtL4KW7dhlwLZ7oZp" 
+                alt="Marjorie Flores" 
+                class="w-full h-full object-cover"
+                onerror="this.onerror=null; this.src='https://placehold.co/400x500/0055FF/FFFFFF?text=Marjorie+Flores';"
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Información Sobre Mí -->
+        <div class="md:col-span-7 space-y-6 text-center md:text-left">
+          <div class="inline-block bg-brandYellow/30 border border-brandYellow text-gray-900 font-bold px-4 py-1.5 rounded-full text-sm">
+            <i class="fa-solid fa-graduation-cap text-brandBlue mr-2"></i> Perfil Académico &amp; Marca Personal
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
+            Marjorie <span class="text-brandBlue">Flores</span>
+          </h1>
+
+          <p class="text-xl sm:text-2xl text-gray-700 leading-relaxed font-medium bg-blue-50/60 p-6 rounded-2xl border-l-8 border-brandBlue">
+            "Mi nombre es Marjorie Flores, me destaco por mi seriedad, compromiso, respeto, empatía, franqueza, servicio y honestidad. Tengo 17 años y actualmente estudio nivel media."
+          </p>
+
+          <!-- Valores Destacados -->
+          <div class="pt-4">
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-3">Mis Valores Fundamentales</h3>
+            <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+              <span class="bg-brandBlue text-white font-semibold px-3.5 py-1.5 rounded-lg text-sm shadow-sm">Seriedad</span>
+              <span class="bg-brandBlue text-white font-semibold px-3.5 py-1.5 rounded-lg text-sm shadow-sm">Compromiso</span>
+              <span class="bg-brandBlue text-white font-semibold px-3.5 py-1.5 rounded-lg text-sm shadow-sm">Respeto</span>
+              <span class="bg-brandBlue text-white font-semibold px-3.5 py-1.5 rounded-lg text-sm shadow-sm">Empatía</span>
+              <span class="bg-brandBlue text-white font-semibold px-3.5 py-1.5 rounded-lg text-sm shadow-sm">Franqueza</span>
+              <span class="bg-brandBlue text-white font-semibold px-3.5 py-1.5 rounded-lg text-sm shadow-sm">Servicio</span>
+              <span class="bg-brandBlue text-white font-semibold px-3.5 py-1.5 rounded-lg text-sm shadow-sm">Honestidad</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MISIÓN Y VISIÓN ================= -->
+  <section id="mision-vision" class="py-16 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl font-extrabold text-gray-900">Misión &amp; Visión</h2>
+        <div class="w-20 h-1.5 bg-brandYellow mx-auto mt-2 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Misión -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-xl transition duration-300 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-brandBlue/10 rounded-bl-full flex justify-center items-center">
+            <i class="fa-solid fa-bullseye text-3xl text-brandBlue"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <span class="w-3 h-8 bg-brandBlue rounded-full inline-block"></span>
+            Misión
+          </h3>
+          <p class="text-gray-700 leading-relaxed text-lg">
+            Formarme de manera integral en la educación media, aplicando diariamente la seriedad, el compromiso, la empatía y la franqueza en cada reto académico. Busco desarrollar conocimientos sólidos en tecnología y áreas multidisciplinarias para brindar un servicio sincero y con honestidad a mi comunidad educativa y entorno social.
+          </p>
+        </div>
+
+        <!-- Visión -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-md hover:shadow-xl transition duration-300 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-brandYellow/20 rounded-bl-full flex justify-center items-center">
+            <i class="fa-solid fa-eye text-3xl text-gray-800"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <span class="w-3 h-8 bg-brandYellow rounded-full inline-block"></span>
+            Visión
+          </h3>
+          <p class="text-gray-700 leading-relaxed text-lg">
+            Consolidarme como una profesional líder enfocada en las ciencias de la economía o en la salud, reconocida por una sólida ética de trabajo, capacidad técnica en el desempeño laboral/académica, y una firme vocación de servicio que contribuya activamente a la transformación y bienestar de la sociedad.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DIPLOMADOS Y CERTIFICACIONES ================= -->
+  <section id="diplomados" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h2 class="text-3xl font-extrabold text-gray-900">Logros &amp; Diplomados</h2>
+        <p class="text-gray-600 mt-2">Certificaciones y diplomados obtenidos durante mi trayectoria de formación</p>
+        <div class="w-20 h-1.5 bg-brandBlue mx-auto mt-2 rounded-full"></div>
+      </div>
+
+      <!-- Filtros de JS -->
+      <div class="flex flex-wrap justify-center gap-2 mb-10">
+        <button class="filter-btn active bg-brandBlue text-white px-4 py-2 rounded-lg text-sm font-semibold shadow transition" data-filter="all">Todos (9)</button>
+        <button class="filter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-semibold transition" data-filter="tech">Tecnología &amp; Web</button>
+        <button class="filter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-semibold transition" data-filter="edu">Educación &amp; Servicio</button>
+        <button class="filter-btn bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-semibold transition" data-filter="arte">Arte &amp; Deportes</button>
+      </div>
+
+      <!-- Grilla de Certificados -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="certifications-grid">
+        
+        <!-- 1. HTML -->
+        <div class="cert-card tech bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:border-brandBlue hover:shadow-lg transition cursor-pointer" onclick="openModal('Certificación en HTML5', 'Tecnología &amp; Programación', 'Acreditación en maquetación web, estructura de documentos semánticos y estándares modernos de desarrollo web.')">
+          <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center text-2xl mb-4 font-bold">
+            <i class="fa-brands fa-html5"></i>
+          </div>
+          <span class="text-xs font-bold text-brandBlue uppercase tracking-wider">Certificación</span>
+          <h4 class="text-lg font-bold text-gray-900 mt-1">HTML5 Semántico</h4>
+          <p class="text-sm text-gray-600 mt-2">Estructuración técnica para desarrollo web y diseño adaptable.</p>
+        </div>
+
+        <!-- 2. CSS -->
+        <div class="cert-card tech bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:border-brandBlue hover:shadow-lg transition cursor-pointer" onclick="openModal('Certificación en CSS3', 'Tecnología &amp; Estilos', 'Dominio de estilos, layouts, Flexbox, Grid y diseño de interfaces web modernas y responsivas.')">
+          <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-2xl mb-4 font-bold">
+            <i class="fa-brands fa-css3-alt"></i>
+          </div>
+          <span class="text-xs font-bold text-brandBlue uppercase tracking-wider">Certificación</span>
+          <h4 class="text-lg font-bold text-gray-900 mt-1">CSS3 &amp; Estilos Avanzados</h4>
+          <p class="text-sm text-gray-600 mt-2">Diseño de interfaces atractivas, modernas y responsivas.</p>
+        </div>
+
+        <!-- 3. JavaScript -->
+        <div class="cert-card tech bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:border-brandBlue hover:shadow-lg transition cursor-pointer" onclick="openModal('Certificación en JavaScript', 'Programación Web', 'Fundamentos de programación lógica, manipulación del DOM, eventos e interactividad en el navegador.')">
+          <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-lg flex items-center justify-center text-2xl mb-4 font-bold">
+            <i class="fa-brands fa-js"></i>
+          </div>
+          <span class="text-xs font-bold text-brandBlue uppercase tracking-wider">Certificación</span>
+          <h4 class="text-lg font-bold text-gray-900 mt-1">JavaScript Programación</h4>
+          <p class="text-sm text-gray-600 mt-2">Desarrollo de lógica interactiva y dinámica para la web.</p>
+        </div>
+
+        <!-- 4. Excel -->
+        <div class="cert-card tech bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:border-brandBlue hover:shadow-lg transition cursor-pointer" onclick="openModal('Certificación en Microsoft Excel', 'Herramientas Ofimáticas', 'Manejo de hojas de cálculo, organización de datos, fórmulas y análisis cuantitativo.')">
+          <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-2xl mb-4 font-bold">
+            <i class="fa-solid fa-file-excel"></i>
+          </div>
+          <span class="text-xs font-bold text-brandBlue uppercase tracking-wider">Certificación</span>
+          <h4 class="text-lg font-bold text-gray-900 mt-1">Microsoft Excel</h4>
+          <p class="text-sm text-gray-600 mt-2">Análisis de datos, organización y gestión de planillas numéricas.</p>
+        </div>
+
+        <!-- 5. Maestra Dominical -->
+        <div class="cert-card edu bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:border-brandBlue hover:shadow-lg transition cursor-pointer" onclick="openModal('Diplomado en Maestra Dominical', 'Educación &amp; Valores', 'Formación pedagógica y de valores éticos para la enseñanza y guía en grupos infantiles y comunitarios.')">
+          <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center text-2xl mb-4 font-bold">
+            <i class="fa-solid fa-chalkboard-user"></i>
+          </div>
+          <span class="text-xs font-bold text-brandBlue uppercase tracking-wider">Diplomado</span>
+          <h4 class="text-lg font-bold text-gray-900 mt-1">Maestra Dominical</h4>
+          <p class="text-sm text-gray-600 mt-2">Habilidades pedagógicas, dinamización de grupos e instrucción en valores.</p>
+        </div>
+
+        <!-- 6. ILJ y CBD -->
+        <div class="cert-card edu bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:border-brandBlue hover:shadow-lg transition cursor-pointer" onclick="openModal('Certificado para dar ILJ y CBD', 'Liderazgo &amp; Formación', 'Acreditación para la facilitación e instrucción de programas de orientación social y valores comunitarios.')">
+          <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-2xl mb-4 font-bold">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <span class="text-xs font-bold text-brandBlue uppercase tracking-wider">Certificado</span>
+          <h4 class="text-lg font-bold text-gray-900 mt-1">Instrucción ILJ y CBD</h4>
+          <p class="text-sm text-gray-600 mt-2">Capacitación oficial para impartir programas de desarrollo y formación.</p>
+        </div>
+
+        <!-- 7. Música -->
+        <div class="cert-card arte bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:border-brandBlue hover:shadow-lg transition cursor-pointer" onclick="openModal('Diplomado en Música', 'Artes Integrales', 'Estudio de teoría musical básica, práctica instrumental y apreciación artística.')">
+          <div class="w-12 h-12 bg-pink-100 text-pink-600 rounded-lg flex items-center justify-center text-2xl mb-4 font-bold">
+            <i class="fa-solid fa-music"></i>
+          </div>
+          <span class="text-xs font-bold text-brandBlue uppercase tracking-wider">Diplomado</span>
+          <h4 class="text-lg font-bold text-gray-900 mt-1">Formación en Música</h4>
+          <p class="text-sm text-gray-600 mt-2">Desarrollo de disciplina creativa, ritmo y sensibilidad artística.</p>
+        </div>
+
+        <!-- 8. Arte Principiante -->
+        <div class="cert-card arte bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:border-brandBlue hover:shadow-lg transition cursor-pointer" onclick="openModal('Diplomado en Arte Principiante', 'Artes Plásticas', 'Introducción a la expresión plástica, teoría del color y composición visual.')">
+          <div class="w-12 h-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center text-2xl mb-4 font-bold">
+            <i class="fa-solid fa-palette"></i>
+          </div>
+          <span class="text-xs font-bold text-brandBlue uppercase tracking-wider">Diplomado</span>
+          <h4 class="text-lg font-bold text-gray-900 mt-1">Arte Principiante</h4>
+          <p class="text-sm text-gray-600 mt-2">Exploración de conceptos plásticos, composición y creatividad visual.</p>
+        </div>
+
+        <!-- 9. Kids Basket -->
+        <div class="cert-card arte bg-white border-2 border-gray-100 rounded-xl p-6 shadow-sm hover:border-brandBlue hover:shadow-lg transition cursor-pointer" onclick="openModal('Diplomado en Kids Basket', 'Deportes &amp; Liderazgo', 'Instrucción deportiva y fundamentos de baloncesto orientados a categorías infantiles.')">
+          <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center text-2xl mb-4 font-bold">
+            <i class="fa-solid fa-basketball"></i>
+          </div>
+          <span class="text-xs font-bold text-brandBlue uppercase tracking-wider">Diplomado</span>
+          <h4 class="text-lg font-bold text-gray-900 mt-1">Kids Basket</h4>
+          <p class="text-sm text-gray-600 mt-2">Principios de trabajo en equipo, salud física y fundamentos de baloncesto.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= VOLUNTARIADOS ================= -->
+  <section id="voluntariados" class="py-16 bg-blue-50/50 border-t border-b border-blue-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="bg-brandYellow text-gray-900 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider">Impacto Social</span>
+        <h2 class="text-3xl font-extrabold text-gray-900 mt-2">Voluntariados</h2>
+        <p class="text-gray-600">Acciones comunitarias centradas en el servicio, la solidaridad y la empatía</p>
+        <div class="w-20 h-1.5 bg-brandBlue mx-auto mt-2 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Voluntariado 1 -->
+        <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row gap-6 items-center">
+          <div class="w-full sm:w-48 h-40 rounded-xl overflow-hidden shrink-0 bg-gray-200">
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=600" alt="Reparto de Comida INJEC" class="w-full h-full object-cover">
+          </div>
+          <div class="space-y-2 text-center sm:text-left">
+            <span class="inline-block bg-blue-100 text-brandBlue font-bold text-xs px-2.5 py-1 rounded">Servicio Comunitario</span>
+            <h3 class="text-xl font-bold text-gray-900">Repartir Comida</h3>
+            <p class="text-gray-600 text-sm font-medium">Instituto Nacional Joaquín Ernesto Cárdenas</p>
+            <p class="text-gray-500 text-sm">Organización y apoyo solidario para la preparación y entrega de alimentos a los estudiantes de la institución.</p>
+          </div>
+        </div>
+
+        <!-- Voluntariado 2 -->
+        <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row gap-6 items-center">
+          <div class="w-full sm:w-48 h-40 rounded-xl overflow-hidden shrink-0 bg-gray-200">
+            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=600" alt="Pintar zona de clases INJEC" class="w-full h-full object-cover">
+          </div>
+          <div class="space-y-2 text-center sm:text-left">
+            <span class="inline-block bg-yellow-100 text-yellow-800 font-bold text-xs px-2.5 py-1 rounded">Mejora de Infraestructura</span>
+            <h3 class="text-xl font-bold text-gray-900">Pintar Zona de Clases</h3>
+            <p class="text-gray-600 text-sm font-medium">Instituto Nacional Joaquín Ernesto Cárdenas</p>
+            <p class="text-gray-500 text-sm">Jornada comunitaria de renovación, limpieza y pintura para adecuar salones de clases y ofrecer un mejor ambiente de aprendizaje.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PORTAFOLIO ================= -->
+  <section id="portafolio" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl font-extrabold text-gray-900">Portafolio de Proyectos</h2>
+        <p class="text-gray-600 mt-2">Iniciativas tecnológicas y de conciencia ambiental</p>
+        <div class="w-20 h-1.5 bg-brandYellow mx-auto mt-2 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Proyecto 1: Hackathon -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col">
+          <div class="h-48 bg-gray-200 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=600" alt="Hackathon Project" class="w-full h-full object-cover">
+            <span class="absolute top-3 right-3 bg-brandBlue text-white font-bold text-xs px-3 py-1 rounded-full shadow">Tecnología</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900">Hackathon</h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Participación en eventos competitivos de programación e innovación, colaborando en el desarrollo acelerado de prototipos y soluciones tecnológicas.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="bg-gray-100 text-gray-700 text-xs px-2.5 py-1 rounded font-medium">HTML5</span>
+              <span class="bg-gray-100 text-gray-700 text-xs px-2.5 py-1 rounded font-medium">CSS3</span>
+              <span class="bg-gray-100 text-gray-700 text-xs px-2.5 py-1 rounded font-medium">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 2: Greenmind -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col">
+          <div class="h-48 bg-gray-200 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=600" alt="Greenmind Project" class="w-full h-full object-cover">
+            <span class="absolute top-3 right-3 bg-emerald-600 text-white font-bold text-xs px-3 py-1 rounded-full shadow">Sostenibilidad</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900">Greenmind</h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Iniciativa y concepto orientado a promover la conciencia ecológica, el consumo responsable y la sostenibilidad ambiental.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="bg-emerald-50 text-emerald-700 text-xs px-2.5 py-1 rounded font-medium">Conciencia Verde</span>
+              <span class="bg-emerald-50 text-emerald-700 text-xs px-2.5 py-1 rounded font-medium">Investigación</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proyecto 3: Greenly -->
+        <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col">
+          <div class="h-48 bg-gray-200 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&q=80&w=600" alt="Greenly Project" class="w-full h-full object-cover">
+            <span class="absolute top-3 right-3 bg-teal-600 text-white font-bold text-xs px-3 py-1 rounded-full shadow">Medio Ambiente</span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900">Greenly</h3>
+              <p class="text-gray-600 text-sm mt-2">
+                Proyecto integral enfocado en la optimización ambiental y el análisis ecológico, conectando la conciencia a los hábitos diarios.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="bg-teal-50 text-teal-700 text-xs px-2.5 py-1 rounded font-medium">Ecología</span>
+              <span class="bg-teal-50 text-teal-700 text-xs px-2.5 py-1 rounded font-medium">Gestión de Proyectos</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CURRICULUM VITAE (CV) ================= -->
+  <section id="curriculum" class="py-16 bg-gray-100">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" id="curriculum-section">
+      
+      <!-- Contenedor del CV -->
+      <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-gray-200">
+        
+        <!-- Header CV -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b-2 border-gray-100 pb-8 gap-6">
+          <div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900">MARJORIE FLORES</h2>
+            <p class="text-brandBlue font-bold text-lg mt-1">Estudiante de Nivel Medio | Aspirante a Economía o Salud</p>
+            <p class="text-gray-500 text-sm mt-1"><i class="fa-solid fa-cake-candles mr-1"></i> Edad: 17 años</p>
+          </div>
+          <button onclick="window.print()" class="no-print bg-brandBlue hover:bg-brandBlueDark text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow flex items-center gap-2 transition">
+            <i class="fa-solid fa-print"></i> Imprimir / Descargar CV
+          </button>
+        </div>
+
+        <!-- Resumen Profesional -->
+        <div class="py-6 border-b border-gray-100">
+          <h3 class="text-xs font-bold text-brandBlue uppercase tracking-widest mb-2">Resumen de Perfil</h3>
+          <p class="text-gray-700 leading-relaxed font-medium">
+            Estudiante caracterizada por la seriedad, el compromiso, el respeto, la empatía, la franqueza, el servicio y la honestidad. Cuento con certificaciones comprobables en tecnologías de desarrollo web (HTML, CSS, JavaScript) y herramientas analíticas como Microsoft Excel, complementadas con diplomados en instrucción pedagógica, artes e impacto comunitario. Mi objetivo es continuar mi preparación profesional orientada al área de la economía o la salud.
+          </p>
+        </div>
+
+        <!-- Formación Académica -->
+        <div class="py-6 border-b border-gray-100">
+          <h3 class="text-xs font-bold text-brandBlue uppercase tracking-widest mb-4">Educación Académica</h3>
+          <div class="flex justify-between items-start">
+            <div>
+              <h4 class="text-lg font-bold text-gray-900">Educación de Nivel Medio</h4>
+              <p class="text-gray-600 text-sm">Estudiante en Formación Activa</p>
+            </div>
+            <span class="bg-blue-50 text-brandBlue font-bold text-xs px-3 py-1 rounded-full">En Curso</span>
+          </div>
+        </div>
+
+        <!-- Secciones Dobles CV -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 py-6 border-b border-gray-100">
+          
+          <!-- Columna Izquierda: Diplomados -->
+          <div>
+            <h3 class="text-xs font-bold text-brandBlue uppercase tracking-widest mb-4">Diplomados &amp; Certificaciones</h3>
+            <ul class="space-y-2 text-sm text-gray-700">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue"></i> Certificación en HTML</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue"></i> Certificación en CSS</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue"></i> Certificación en JavaScript</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue"></i> Certificación en Microsoft Excel</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue"></i> Diplomado en Maestra Dominical</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue"></i> Certificado para dar ILJ y CBD</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue"></i> Diplomado en Música</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue"></i> Diplomado en Arte Principiante</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brandBlue"></i> Diplomado en Kids Basket</li>
+            </ul>
+          </div>
+
+          <!-- Columna Derecha: Voluntariados & Proyectos -->
+          <div>
+            <h3 class="text-xs font-bold text-brandBlue uppercase tracking-widest mb-4">Voluntariados &amp; Proyectos</h3>
+            <div class="space-y-3 text-sm text-gray-700">
+              <div>
+                <p class="font-bold text-gray-900">Voluntariado Social</p>
+                <p class="text-xs text-gray-600">Instituto Nacional Joaquín Ernesto Cárdenas</p>
+                <p class="text-xs text-gray-500">• Repartir comida a estudiantes</p>
+                <p class="text-xs text-gray-500">• Pintar y adecuar zona de clases</p>
+              </div>
+              <div class="pt-2">
+                <p class="font-bold text-gray-900">Proyectos Destacados</p>
+                <p class="text-xs text-gray-500">• Hackathon (Desarrollo Web &amp; Innovación)</p>
+                <p class="text-xs text-gray-500">• Greenmind (Iniciativa Sostenible)</p>
+                <p class="text-xs text-gray-500">• Greenly (Gestión Ambiental)</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Habilidades Bajas (Completada la lista previamente truncada) -->
+        <div class="pt-6">
+          <h3 class="text-xs font-bold text-brandBlue uppercase tracking-widest mb-3">Habilidades Clave</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full font-medium">Empatía &amp; Servicio</span>
+            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full font-medium">Trabajo en Equipo</span>
+            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full font-medium">Desarrollo Web (HTML/CSS/JS)</span>
+            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full font-medium">Liderazgo &amp; Pedagogía</span>
+            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full font-medium">Gestión en Excel</span>
+            <span class="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full font-medium">Honestidad y Compromiso</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MODAL DE CERTIFICACIONES ================= -->
+  <div id="cert-modal" class="fixed inset-0 z-50 bg-gray-900/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative transform transition-all border border-gray-100">
+      
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl font-bold p-2">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="w-12 h-12 bg-blue-50 text-brandBlue rounded-xl flex items-center justify-center text-2xl mb-4">
+        <i class="fa-solid fa-certificate"></i>
+      </div>
+
+      <span id="modal-category" class="text-xs font-bold text-brandBlue uppercase tracking-wider block mb-1">Categoría</span>
+      <h3 id="modal-title" class="text-2xl font-bold text-gray-900 mb-3">Título del Diplomado</h3>
+      <p id="modal-description" class="text-gray-600 leading-relaxed text-sm mb-6">
+        Descripción detallada del logro o certificación obtenida.
+      </p>
+
+      <div class="flex justify-end">
+        <button onclick="closeModal()" class="bg-brandBlue text-white font-bold px-5 py-2.5 rounded-xl hover:bg-brandBlueDark transition text-sm">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-gray-900 text-white py-12 border-t-4 border-brandYellow mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div>
+          <span class="text-2xl font-black tracking-wider">MARJORIE <span class="text-brandYellow">FLORES</span></span>
+          <p class="text-gray-400 text-sm mt-1">Marca Personal &amp; Portafolio Académico</p>
+        </div>
+        <div class="text-gray-400 text-sm text-center md:text-right">
+          <p>&copy; 2026 Marjorie Flores. Todos los derechos reservados.</p>
+          <p class="text-xs text-gray-500 mt-1">Construido con compromiso, servicio y honestidad.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    // 1. Alternar Menú Móvil
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Cierra el menú al presionar un enlace
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // 2. Filtro de Categorías para Diplomados
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const certCards = document.querySelectorAll('.cert-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remover estado activo de todos los botones
+        filterBtns.forEach(b => {
+          b.classList.remove('active', 'bg-brandBlue', 'text-white');
+          b.classList.add('bg-gray-100', 'text-gray-700');
+        });
+
+        // Activar el botón seleccionado
+        btn.classList.add('active', 'bg-brandBlue', 'text-white');
+        btn.classList.remove('bg-gray-100', 'text-gray-700');
+
+        const filter = btn.getAttribute('data-filter');
+
+        certCards.forEach(card => {
+          if (filter === 'all' || card.classList.contains(filter)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 3. Control del Modal Interactivo
+    const modal = document.getElementById('cert-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalCategory = document.getElementById('modal-category');
+    const modalDescription = document.getElementById('modal-description');
+
+    function openModal(title, category, description) {
+      if (modal && modalTitle && modalCategory && modalDescription) {
+        modalTitle.textContent = title;
+        modalCategory.textContent = category;
+        modalDescription.textContent = description;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeModal() {
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    // Cerrar modal al hacer clic fuera del cuadro blanco
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
+```
